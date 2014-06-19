@@ -1,99 +1,109 @@
 body{
-	margin:0px;
-	padding:0px;
-	background: #009989;
+margin:0px;
+padding:0px;
+background: #009989;
 }
 
 /*Navigation styles*/
 #navigation {
-	background: #fff;
-	margin: 0px;
-	padding: 0px;
-	height: 50px;
-	display: block;
+background: #fff;
+margin: 0px;
+padding: 0px;
+height: 50px;
+        //display: block;
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+       -webkit-box-shadow: 0px 0px 8px 0px #000000;
+       -moz-box-shadow: 0px 0px 8px 0px #000000;
+       box-shadow: 0px 0px 8px 0px #000000;
 }
 
 #navigation ul{
-	list-style-type: none;
+    list-style-type: none;
+    margin: 0px;
 }
 
 #navigation ul li{
-	display: inline-block;
-	line-height: 50px;
+display: inline-block;
+line-height: 50px;
+vertical-align: top;
 }
 
 #navigation ul li a{
-	padding: 0px 10px;
-	text-decoration: none;
-	color: #0C162F;
-	font-family: Arial, sans-serif;
-	font-size: 24px;
-	display:block;
+padding: 0px 10px;
+         text-decoration: none;
+color: #0C162F;
+       font-family: Arial, sans-serif;
+       font-size: 24px;
+display:block;
 }
 
 #navigation ul li a:hover{
-	background: #0C162F;
-	color: #009989;
+background: #0C162F;
+color: #009989;
 }
 
 #content{
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	background: #009989;
-	padding: 10px;
+width: 80%;
+       margin-left: auto;
+       margin-right: auto;
+background: #009989;
+padding: 10px;
+padding-top: 50px;
 }
 
 /*Index page styles*/
 #acform {
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #acform ul{
-	list-style-type: none;
-	text-align: center;
+    list-style-type: none;
+    text-align: center;
 }
 
 h3, p{
-	color: #0C162F;
-	font-family: Arial, sans-serif;
-	display: inline-block;
+color: #0C162F;
+       font-family: Arial, sans-serif;
+display: inline-block;
 }
 
 p{
-	font-size: 24px;
+    font-size: 24px;
 }
 
 h3{
-	font-size: 36px;
+    font-size: 36px;
 }
 
 
 .box{
-	display: inline-block;
-	border: 2px solid #0C162F;
+display: inline-block;
+border: 2px solid #0C162F;
 }
 
 #submit {
-	border: 2px solid #0C162F;
-	color: #0C162F;
-	background: #fff;
-	margin: 20px;
-	font-size: 24px;
-	font-family: Arial, sans-serif;
+border: 2px solid #0C162F;
+color: #0C162F;
+background: #fff;
+margin: 20px;
+        font-size: 24px;
+        font-family: Arial, sans-serif;
 }
 
 #submit:hover{
-	background: #0C162F;
-	color: #fff;
-	border: 2px solid #fff;
-	cursor: pointer;
+background: #0C162F;
+color: #fff;
+border: 2px solid #fff;
+cursor: pointer;
 }
 
 /*Convert page styles*/
 .convert{
-text-align: center;
+    text-align: center;
 }
 
 #result{
