@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+##Disclaimer: I know this is one big, kind of messy file, but this is really just a weekend hack to get introduced to flask.  Feel free to play around with the code and send me pull requests, questions, or suggestions.  
+
 #Create the application
 app = Flask(__name__)
 
@@ -45,9 +47,13 @@ def getinfo():
     newnumber = 0
     """Get information from html form (protip: this is 
 what request.form does!)"""
-    base1 = int(request.form['base1'])
-    base2 = int(request.form['base2'])
-    
+    try:
+        base1 = int(request.form['base1'])
+        base2 = int(request.form['base2'])
+    except ValueError:
+        return render_template('index.html', error=1)
+    if (base1<1 or base2<1 or base1>36 or base2>36):
+        return render_template('index.html', error=1)   
     """Number can't be forced to be int since it may have 
 base greater than 10.  Python automatically types all 
 input as string, so then all we have to do is make sure 
@@ -108,18 +114,24 @@ def convert(base1, base2, number):
     result = toDigits(fromDigits(number, base1), base2)       
     return result
 
+#Get cute picture from reddit for error pages
+def getpic():
+    pic = "XVLViOE.jpg" 
+    cutepic = "https://i.imgur.com/" + pic
+    return cutepic
+
 #Fancy error handlers, for fancy error pages
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error.html', message="404 Error: Page not found")
+    return render_template('error.html', image=getpic(), message="404 Error: Page not found")
 
 @app.errorhandler(403)
 def forbidden_page(e):
-    return render_template('error.html', message="403 Error: Page forbidden")
+    return render_template('error.html', image=getpic(), message="403 Error: Page forbidden")
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('error.html', message="500 Error: Internal Server Error")
+    return render_template('error.html', image=getpic(), message="500 Error: Internal Server Error")
 
 #Now, run the app!  Yay!
 if __name__ == '__main__':
