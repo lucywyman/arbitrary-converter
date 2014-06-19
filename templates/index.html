@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% block convert %}
+{% endblock %}
+
+<form action="/convert" method=post type="text" name="acform" id="acform" value="" autocomplete="off">
+    <ul>
+        <li><p>Base of original number:</p>
+        <input type=text name=base1 size=10 max=100 required=required class="box"></li>
+        <li><p>Base to be converted to:</p>
+        <input type=text name=base2 size=10 max=100 required=required class="box"></li>
+        <li><p>Number to be converted:</p>
+        <input type=text name=number size=30 max=1000000 required=required class="box"><li>
+        <li><input id="submit" type=submit name=submitbutton value="Submit"></li>
+    </ul>
+</form>
+<h3>How to use:</h3>
+<p> Hello! Welcome to the Arbitrary Base Converter!  To use, please enter the base of the number you're starting with.  If you aren't sure what a base is, it's the ...</p>
+{% endblock %}
+
+
+
