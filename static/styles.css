@@ -11,7 +11,6 @@ background: #fff;
 margin: 0px;
 padding: 0px;
 height: 50px;
-        //display: block;
 position: fixed;
 top: 0px;
 left: 0px;
@@ -19,6 +18,7 @@ width: 100%;
        -webkit-box-shadow: 0px 0px 8px 0px #000000;
        -moz-box-shadow: 0px 0px 8px 0px #000000;
        box-shadow: 0px 0px 8px 0px #000000;
+z-index: 100;
 }
 
 #navigation ul{
@@ -73,6 +73,12 @@ text-decoration: underline;
 
 #acform ul li{
     line-height: 4em;
+}
+
+ol{
+    color: #0c162f;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
 }
 
 h2, h3, h4, p{
@@ -152,7 +158,7 @@ color: #fff;
 
 #footercontent{
 margin-left: 50px;
-margin-top: 10px;}
+padding-top: 20px;}
 
 .footerp{
 font-size:18px;
@@ -165,4 +171,23 @@ display: block;}
 #footer a{
 color: #BFCDB7;
 }
+
+/*About me page styles*/
+.polaroid {
+position: relative;
+width: 100%;
+margin: 30px;}
+ 
+.polaroid img {
+transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+-webkit-transform: rotate(-3deg);
+display: block;
+margin-left: auto;
+margin-right: auto;
+border: 10px solid #ffffff;
+border-bottom: 70px solid #fff;
+box-shadow: 0px 0px  1px 3px #777;
+width: 40%;
+z-index: 1}
 
