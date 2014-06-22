@@ -115,32 +115,53 @@ def fromDigits(number, base1):
         n = base1*n+d
     return n
 
-#Now, using these two functions, we can actually convert stuff!      
+#Now, using these two functions, we can actually convert stuff!
 def convert(base1, base2, number):
-    result = toDigits(fromDigits(number, base1), base2)       
+    result = toDigits(fromDigits(number, base1), base2)
     return result
 
 #Get cute picture from reddit for error pages
-def getpic():
-    pic = "XVLViOE.jpg" 
-    cutepic = "https://i.imgur.com/" + pic
-    return cutepic
+def getpic(subreddit):
+    try:
+        url = "http://www.reddit.com/r/" + subreddit + \
+            "/top/.json?sort=top&t=week&limit=5"
+        r = urllib2.urlopen(url).read()
+        data = json.loads(r)
+
+        posts = []
+
+        for post in data[u'data'][u'children']:
+            if (post[u'kind'] == u't3' and
+                    post[u'data'][u'domain'] == u'i.imgur.com'):
+                posts.append(post[u'data'][u'url'])
+
+        if(len(posts) > 0):
+            return choice(posts)
+
+    except urllib2.HTTPError, e:
+        # print e.code
+        return "https://i.imgur.com/uhBWeIE.jpg"
+        # in the interest of time, we'll return a safe bet
+        # if you want, uncomment these lines to get a different image
+        # sleep(1)
+        # return getpic(subreddit)
+    # None from that sub, just pick /aww
+    return getpic("aww")
 
 #Fancy error handlers, for fancy error pages
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error.html', image=getpic(), message="404 Error: Page not found")
+    return render_template('error.html', image=getpic("aww"), message="404 Error: Page not found")
 
 @app.errorhandler(403)
 def forbidden_page(e):
-    return render_template('error.html', image=getpic(), message="403 Error: Page forbidden")
+    return render_template('error.html', image=getpic("aww"), message="403 Error: Page forbidden")
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('error.html', image=getpic(), message="500 Error: Internal Server Error")
+    return render_template('error.html', image=getpic("aww"), message="500 Error: Internal Server Error")
 
 #Now, run the app!  Yay!
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
