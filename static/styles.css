@@ -177,7 +177,7 @@ color: #BFCDB7;
 position: relative;
 width: 100%;
 margin: 30px;}
- 
+
 .polaroid img {
 transform: rotate(-3deg);
 -ms-transform: rotate(-3deg);
@@ -190,4 +190,3 @@ border-bottom: 70px solid #fff;
 box-shadow: 0px 0px  1px 3px #777;
 width: 40%;
 z-index: 1}
-

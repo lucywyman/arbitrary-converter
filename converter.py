@@ -1,32 +1,38 @@
 from flask import Flask, render_template, request
 import os
 
-##Disclaimer: I know this is one big, kind of messy file, but this is really just a weekend hack to get introduced to flask.  Feel free to play around with the code and send me pull requests, questions, or suggestions.  
+import urllib2
+import json
+from time import sleep
+from random import choice
+
+
+##Disclaimer: I know this is one big, kind of messy file, but this is really just a weekend hack to get introduced to flask.  Feel free to play around with the code and send me pull requests, questions, or suggestions.
 
 #Create the application
 app = Flask(__name__)
 
 #Alphabet dictionary for bases greater than 10
 alphabet = {
-'a' : 11, 
-'b' : 12, 
-'c' : 13, 
-'d' : 14, 
-'e' : 15, 
-'f' : 16, 
-'g' : 17, 
-'h' : 18, 
-'i' : 19, 
-'j' : 20, 
-'k' : 21, 
-'l' : 22, 
-'m' : 23, 
-'n' : 24, 
-'o' : 25, 
-'p' : 26, 
-'q' : 27, 
-'r' : 28, 
-'s' : 29, 
+'a' : 11,
+'b' : 12,
+'c' : 13,
+'d' : 14,
+'e' : 15,
+'f' : 16,
+'g' : 17,
+'h' : 18,
+'i' : 19,
+'j' : 20,
+'k' : 21,
+'l' : 22,
+'m' : 23,
+'n' : 24,
+'o' : 25,
+'p' : 26,
+'q' : 27,
+'r' : 28,
+'s' : 29,
 't' : 30,
 'u' : 31,
 'v' : 32,
@@ -50,7 +56,7 @@ def about():
 @app.route('/convert', methods=['POST', 'GET'])
 def getinfo():
     newnumber = 0
-    """Get information from html form (protip: this is 
+    """Get information from html form (protip: this is
 what request.form does!)"""
     try:
         base1 = int(request.form['base1'])
@@ -58,10 +64,10 @@ what request.form does!)"""
     except ValueError:
         return render_template('index.html', error=1)
     if ((base1<-36 or (base1>-1 and base1<1) or base1>36) or (base2<-36 or (base2>-1 and base2<1) or base2>36)):
-        return render_template('index.html', error=1)   
-    """Number can't be forced to be int since it may have 
-base greater than 10.  Python automatically types all 
-input as string, so then all we have to do is make sure 
+        return render_template('index.html', error=1)
+    """Number can't be forced to be int since it may have
+base greater than 10.  Python automatically types all
+input as string, so then all we have to do is make sure
 it's lower case so that the dictionary will work."""
     number = request.form['number'].lower()
     """If the first base is greater than 10, convert number to decimal
@@ -94,7 +100,7 @@ def toDigits(number, base2):
         count += 1
         if (digit > 10):
             result[count-1] = str(unichr(int(digit)+86))
-    """Since the number is now an array, we convert it to a string, 
+    """Since the number is now an array, we convert it to a string,
 concatenate the string, then change it back to an int"""
     result = str(''.join(map(str, result)))
     return result
