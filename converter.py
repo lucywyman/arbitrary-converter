@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 
 ##Disclaimer: I know this is one big, kind of messy file, but this is really just a weekend hack to get introduced to flask.  Feel free to play around with the code and send me pull requests, questions, or suggestions.  
 
