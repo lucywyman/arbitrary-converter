@@ -10,15 +10,18 @@
 {% endif %}
 
 <form action="/convert" method=post type="text" name="acform" id="acform" autocomplete="off">
-    <ul>
-        <li><p>Base of original number:</p>
-        <input type=text name=base1 size=10 max=100 required=required class="box"></li>
-        <li><p>Base to be converted to:</p>
-        <input type=text name=base2 size=10 max=100 required=required class="box"></li>
-        <li><p>Number to be converted:</p>
+    <div class="input">
+        <p>Base of original number:</p>
+        <input type=text name=base1 size=10 max=100 required=required class="box">
+    </div>
+    <div class="input">
+        <p>Base to be converted to:</p>
+        <input type=text name=base2 size=10 max=100 required=required class="box">
+    </div>
+    <div class="input"><p>Number to be converted:</p>
         <input type=text name=number size=30 max=1000000 required=required class="box"><li>
-        <li><input id="submit" type=submit name=submitbutton value="Convert!"></li>
-    </ul>
+        <input id="submit" type=submit name=submitbutton value="Convert!">
+    </div>
 </form>
 <h3>How to use:</h3>
 <p> Hello! Welcome to the Arbitrary Base Converter!  To use, please enter the base of the number you're trying to convert, the base you'd like to convert it to, and the number itself (in original base).  If you aren't sure what a base is, it can be thought of as the number that you count to before adding more placeholders to the number.  For example, we usually use base 10, which means we have 10 positive integers (0 through 9) that are only 1 digit long, then we add another to make it 1 and 0, or 10.  There's a much better <a href="http://simple.wikipedia.org/wiki/Base_(mathematics)">explanation here</a>.</p><br><br>

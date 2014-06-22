@@ -66,13 +66,10 @@ text-decoration: underline;
     margin-right: auto;
 }
 
-#acform ul{
+#acform div{
     list-style-type: none;
     text-align: center;
-}
-
-#acform ul li{
-    line-height: 4em;
+    min-height: 4em;
 }
 
 ol{
@@ -105,8 +102,6 @@ h4{
 font-size: 30px;
 color: #fff;
 }
-
-li 
 
 .box{
 display: inline-block;
@@ -152,9 +147,9 @@ color: #fff;
 /*Footer styles*/
 #footer{
    background: #0c162f;
-    height: 100px;
+    min-height: 100px;
     width: 100%;
-} 
+}
 
 #footercontent{
 margin-left: 50px;
