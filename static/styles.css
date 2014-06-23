@@ -14,7 +14,7 @@ height: 50px;
 position: fixed;
 top: 0px;
 left: 0px;
-width: 100%;
+min-width: 100%;
        -webkit-box-shadow: 0px 0px 8px 0px #000000;
        -moz-box-shadow: 0px 0px 8px 0px #000000;
        box-shadow: 0px 0px 8px 0px #000000;
@@ -30,7 +30,10 @@ z-index: 100;
 display: inline-block;
 line-height: 50px;
 vertical-align: top;
+display:table-cell;
+white-space: nowrap;
 }
+
 
 #navigation ul li a{
 padding: 0px 10px;
@@ -66,13 +69,10 @@ text-decoration: underline;
     margin-right: auto;
 }
 
-#acform ul{
+#acform div{
     list-style-type: none;
     text-align: center;
-}
-
-#acform ul li{
-    line-height: 4em;
+    min-height: 4em;
 }
 
 ol{
@@ -105,8 +105,6 @@ h4{
 font-size: 30px;
 color: #fff;
 }
-
-li 
 
 .box{
 display: inline-block;
@@ -152,9 +150,9 @@ color: #fff;
 /*Footer styles*/
 #footer{
    background: #0c162f;
-    height: 100px;
+    min-height: 100px;
     width: 100%;
-} 
+}
 
 #footercontent{
 margin-left: 50px;
@@ -177,7 +175,7 @@ color: #BFCDB7;
 position: relative;
 width: 100%;
 margin: 30px;}
- 
+
 .polaroid img {
 transform: rotate(-3deg);
 -ms-transform: rotate(-3deg);
@@ -190,4 +188,3 @@ border-bottom: 70px solid #fff;
 box-shadow: 0px 0px  1px 3px #777;
 width: 40%;
 z-index: 1}
-
