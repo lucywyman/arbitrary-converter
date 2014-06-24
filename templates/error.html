@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block body %}
-<h2>{{ message }}</h2><br>
+<div id="errorpage">
+<h3>{{ message }}</h3><br>
 <h2>Oops!  It seems something has gone wrong. We'll get right on fixing it!  In the meantime, here's a cute picture. </h2><br>
+<p><a href="/">(Click here to go back to the homepage)</a></p> 
 <img id="cutepic" src={{ image }}></img>
-<h4><a href="/">(Click here to go back to the homepage)</a></h4> 
+</div>
 {% endblock %}

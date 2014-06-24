@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request
-import os
+import os, string
 
 import urllib2
 import json
 from time import sleep
 from random import choice
-
 
 # Disclaimer: I know this is one big, kind of messy file, but this is
 # really just a weekend hack to get introduced to flask.  Feel free to
@@ -60,6 +59,7 @@ def about():
 # Generate convert page with results
 @app.route('/convert', methods=['POST', 'GET'])
 def getinfo():
+    isnegative = False
     newnumber = 0
     """Get information from html form (protip: this is
 what request.form does!)"""
@@ -81,6 +81,11 @@ base greater than 10.  Python automatically types all
 input as string, so then all we have to do is make sure
 it's lower case so that the dictionary will work."""
     number = request.form['number'].lower()
+    number.replace(" ","")
+    #If number is negative, change it to be not negative
+    if (number[0] == "-"):
+        isnegative = True
+        number = number[1:]
     """If the first base is greater than 10, convert number to decimal
 and change base1 to base 10.  Kind of a cheat, but it works."""
     if (base1 > 10):
@@ -89,6 +94,9 @@ and change base1 to base 10.  Kind of a cheat, but it works."""
     else:
         newnumber = number
     result = convert(base1, base2, newnumber)
+    if (isnegative):
+        result = "-"+result
+        number = "-"+number
     return render_template('/convert.html', number=number,
                            base2=base2, result=result)
 
