@@ -69,10 +69,10 @@ what request.form does!)"""
     except ValueError:
         return render_template('index.html', error=1)
     if (base1 < -36 or
-            (base1 >= -1 and base1 <= 1) or
+            (base1 >= -1 and base1 < 1) or
             base1 > 36 or
             base2 < -36 or
-            (base2 >= -1 and base2 <= 1) or
+            (base2 >= -1 and base2 < 1) or
             base2 > 36):
         return render_template('index.html', error=1)
 
@@ -81,11 +81,19 @@ base greater than 10.  Python automatically types all
 input as string, so then all we have to do is make sure
 it's lower case so that the dictionary will work."""
     number = request.form['number'].lower()
-    number.replace(" ","")
+    #Get rid of any whitespace the user may have input
+    number.join(number.split())
     #If number is negative, change it to be not negative
     if (number[0] == "-"):
         isnegative = True
         number = number[1:]
+    """If the base is 1 or -1, then the base system is called Unary, or the tally system.  Since our algorithm will not work for one (since we divide by the base), we need a special function to deal with this."""
+    if (base1 == 1):
+        newnumber = len(number)
+        base1 = 10
+    if (base2 == 1):
+        result = (base1, 10, number)
+        
     """If the first base is greater than 10, convert number to decimal
 and change base1 to base 10.  Kind of a cheat, but it works."""
     if (base1 > 10):
