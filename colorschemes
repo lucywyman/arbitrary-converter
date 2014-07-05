@@ -1,0 +1,28 @@
+Deep seas:
+    $lightcolor: #009989; 
+$darkcolor: #0C162F;
+$accent: #fff;
+$links: #BFCDB7; 
+$primaryfont: Arial, sans-serif;
+$navheight: 50px;
+
+
+Sky's the limit:
+$lightcolor: #A1C1BE; 
+$darkcolor: #59554E;
+$accent: #fff;
+$links: #E2E3D9; 
+$primaryfont: Arial, sans-serif;
+$navheight: 50px;
+
+
+Dark grey and orange:
+$lightcolor: #393939; 
+$darkcolor: #fff;
+$accent: #ff5a09;
+$links: #f3843e; 
+$primaryfont: "Montserrat", sans-serif;
+$navheight: 50px;
+
+
+

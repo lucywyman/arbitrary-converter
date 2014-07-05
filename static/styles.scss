@@ -70,11 +70,13 @@ body{
 }
 
 #layer1{
-    padding-top: $navheight+40px;
+    margin-top: $navheight+40px;
     background: $lightcolor;
     color: $darkcolor;
     height: 60vh;
     text-align: center;
+    min-height: 300px;
+    font-size: 0px;
 }
 
 #layer1:before {
@@ -92,6 +94,10 @@ body{
 #layer3{
     background: $lightcolor;
     color: $darkcolor;
+}
+
+#layer3 li{
+    padding-bottom: 30px;
 }
 
 /*Index page styles*/
@@ -137,11 +143,7 @@ h2{
     text-align: center;
 }
 
-h3{
-    font-size: 30px;
-}
-
-h4{
+h3, h4{
     font-size: 30px;
 }
 
@@ -149,6 +151,9 @@ p{
     font-size: 24px;
 }
 
+#a{
+    vertical-align:middle
+}
 
 .box{
     display: inline-block;
@@ -172,10 +177,6 @@ p{
 }
 
 /*Convert page styles*/
-.convert{
-    text-align: center;
-}
-
 .result{
     color: $accent;
 }
@@ -221,6 +222,11 @@ p{
 }
 
 /*About me page styles*/
+#about{
+    margin-top: $navheight;
+    color: $darkcolor;
+}
+
 .polaroid {
     position: relative;
     width: 100%;
@@ -241,6 +247,13 @@ p{
     z-index: 1
 }
 
+#error{
+    margin-top: -450px;
+    display: table;
+}
+
 #errorpage{
     text-align: center;
+    margin-top: $navheight+40px;
+    color: $darkcolor;
 }

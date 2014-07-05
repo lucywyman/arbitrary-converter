@@ -1,24 +1,22 @@
 {% extends "base.html" %}
 
 {% block body %}
-
+<div id="layer1" class="content">
+{% if error %}
+    <p id="error">Oops! You seem to have entered something wrong!  We can only convert bases between -36 and 36 at the moment.  Keep in mind that there is no way to represent base 0 or base -1!  Please try again.</p>
+{% endif %}
+<form action="/convert" method=post type="text" name="acform" id="acform" autocomplete="off">
 {% block convert %}
 {% endblock %}
-
-{% if error %}
-<h2>Oops!  You seems to have entered something wrong!  We can only convert bases in the range 1 to 36 and (-26) to (-2) at the moment.  Please try again!</h2>
-{% endif %}
-
-<form action="/convert" method=post type="text" name="acform" id="acform" autocomplete="off">
 <div class="input">
-<p>Base of original number:</p>
+<p>Base of original number:  </p>
 <input type=text name=base1 size=10 max=100 required=required class="box">
 </div>
 <div class="input">
-<p>Base to be converted to:</p>
+<p>Base to be converted to:  </p>
 <input type=text name=base2 size=10 max=100 required=required class="box">
 </div>
-<div class="input"><p>Number to be converted:</p>
+<div class="input"><p>Number to be converted:  </p>
 <input type=text name=number size=30 max=1000000 required=required class="box"><li>
 <input id="submit" type=submit name=submitbutton value="Convert!">
 </div>
@@ -35,5 +33,6 @@
 <li><h4>Convert any number to a <a href="http://en.wikipedia.org/wiki/Negative_base">negative base</a>:</h4><p> Yes! You can convert a number to a negative base.  Go ahead and give it a go!  You can also represent a number in a complex or non-integer base, such as the <a href="http://en.wikipedia.org/wiki/Complex_base_systems">Quarter-imaginary base</a> or <a href="http://en.wikipedia.org/wiki/Golden_ratio_base">Golden ratio base</a>.  Unfortunately, I do not have the mathematical skill to include these in the Arbitrary Base Converter.  Submit a pull request!</p></li>
 <li><h4>Check out wikipedia's <a href="http://en.wikipedia.org/wiki/List_of_numeral_systems#Complex_bases">List of numeral systems</a>:</h4><p> Seriously. Stuffs pretty awesome.</p></li>
 </ul>
+</div>
 </div>
 {% endblock %}

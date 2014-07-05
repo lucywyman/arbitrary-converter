@@ -53,11 +53,13 @@ body {
   padding-bottom: 40px; }
 
 #layer1 {
-  padding-top: 90px;
+  margin-top: 90px;
   background: #393939;
   color: white;
   height: 60vh;
-  text-align: center; }
+  text-align: center;
+  min-height: 300px;
+  font-size: 0px; }
 
 #layer1:before {
   content: '';
@@ -72,6 +74,9 @@ body {
 #layer3 {
   background: #393939;
   color: white; }
+
+#layer3 li {
+  padding-bottom: 30px; }
 
 /*Index page styles*/
 #acform {
@@ -107,14 +112,14 @@ h2 {
   font-size: 36px;
   text-align: center; }
 
-h3 {
-  font-size: 30px; }
-
-h4 {
+h3, h4 {
   font-size: 30px; }
 
 p {
   font-size: 24px; }
+
+#a {
+  vertical-align: middle; }
 
 .box {
   display: inline-block;
@@ -135,9 +140,6 @@ p {
   cursor: pointer; }
 
 /*Convert page styles*/
-.convert {
-  text-align: center; }
-
 .result {
   color: #ff5a09; }
 
@@ -176,6 +178,10 @@ p {
   color: white; }
 
 /*About me page styles*/
+#about {
+  margin-top: 50px;
+  color: white; }
+
 .polaroid {
   position: relative;
   width: 100%;
@@ -194,5 +200,11 @@ p {
   width: 40%;
   z-index: 1; }
 
+#error {
+  margin-top: -450px;
+  display: table; }
+
 #errorpage {
-  text-align: center; }
+  text-align: center;
+  margin-top: 90px;
+  color: white; }

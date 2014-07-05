@@ -93,7 +93,7 @@ it's lower case so that the dictionary will work."""
         base1 = 10
     if (base2 == 1):
         result = (base1, 10, number)
-        
+        return render_template('/convert.html', number=number, base2=base2, result=result)
     """If the first base is greater than 10, convert number to decimal
 and change base1 to base 10.  Kind of a cheat, but it works."""
     if (base1 > 10):
