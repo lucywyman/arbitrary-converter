@@ -1,0 +1,259 @@
+$lightcolor: #393939; 
+$darkcolor: #fff;
+$accent: #ff5a09;
+$links: #f3843e; 
+$primaryfont: "Montserrat", sans-serif;
+$navheight: 50px;
+
+body{
+    margin:0px;
+    padding:0px;
+    background: $lightcolor;
+    line-height: 2em;
+}
+
+/*Navigation styles*/
+#navigation {
+    background: $accent;
+    margin: 0px;
+    padding: 0px;
+    height: $navheight;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    -webkit-box-shadow: 0px 0px 8px 0px #000000;
+    -moz-box-shadow: 0px 0px 8px 0px #000000;
+    box-shadow: 0px 0px 8px 0px #000000;
+    z-index: 100;
+}
+
+#navigation ul{
+    list-style-type: none;
+    margin: 0px;
+}
+
+#navigation ul li{
+    display: inline-block;
+    line-height: $navheight;
+    vertical-align: top;
+    display:table-cell;
+    white-space: nowrap;
+}
+
+
+#navigation ul li a{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: $darkcolor;
+    font-family: $primaryfont;
+    font-size: 24px;
+    display:block;
+}
+
+#navigation ul li a:hover{
+    background: $darkcolor;
+    color: $accent;
+}
+
+#navigation img{
+    height: $navheight;
+}
+
+//Content styles
+.content{
+    width: 70vw;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#layer1{
+    margin-top: $navheight+40px;
+    background: $lightcolor;
+    color: $darkcolor;
+    height: 60vh;
+    text-align: center;
+    min-height: 300px;
+    font-size: 0px;
+}
+
+#layer1:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#layer2{
+    background: $darkcolor;
+    color: $lightcolor;
+}
+
+#layer3{
+    background: $lightcolor;
+    color: $darkcolor;
+}
+
+#layer3 li{
+    padding-bottom: 30px;
+}
+
+/*Index page styles*/
+#acform {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#acform div{
+    list-style-type: none;
+    text-align: center;
+    min-height: 4em;
+    padding: 10px;
+}
+
+
+//Typography
+ol{
+    color: $darkcolor;
+    font-family: $primaryfont;
+    font-size: 24px;
+}
+
+a{
+    text-decoration: none;
+    color: $links;
+}
+
+a:hover{
+    color:$darkcolor;
+}
+
+h2, h3, h4, p{
+    font-family: $primaryfont;
+    display: inline;
+}
+
+h2{
+    color: $accent;
+    font-size: 36px;
+    text-align: center;
+}
+
+h3, h4{
+    font-size: 30px;
+}
+
+p{
+    font-size: 24px;
+}
+
+#a{
+    vertical-align:middle
+}
+
+.box{
+    display: inline-block;
+    border: 2px solid $darkcolor;
+}
+
+#submit {
+    border: 2px solid $darkcolor;
+    color: $darkcolor;
+    background: $accent;
+    margin: 20px;
+    font-size: 24px;
+    font-family: $primaryfont;
+}
+
+#submit:hover{
+    background: $darkcolor;
+    color: $accent;
+    border: 2px solid $accent;
+    cursor: pointer;
+}
+
+/*Convert page styles*/
+.result{
+    color: $accent;
+}
+
+/*Error page stuff*/
+#cutepic{
+    width: 40%;
+    height: auto;
+    margin: 10px;
+    border: 2px solid white;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+/*Footer styles*/
+#footer{
+    background: $accent;
+    min-height: 100px;
+    width: 100%;
+}
+
+#footercontent{
+    margin-left: 50px;
+    padding-top: 20px;
+}
+
+.footerp{
+    font-size:18px;
+    color: $darkcolor;
+    font-family: $primaryfont;
+    margin:0px;
+    padding: 0px;
+    display: block;
+}
+
+.footerp a{
+    color: $lightcolor;
+}
+
+.footerp a:hover{ 
+    color: $darkcolor;
+}
+
+/*About me page styles*/
+#about{
+    margin-top: $navheight;
+    color: $darkcolor;
+}
+
+.polaroid {
+    position: relative;
+    width: 100%;
+    margin: 30px;
+}
+
+.polaroid img {
+    transform: rotate(-3deg);
+           -ms-transform: rotate(-3deg);
+           -webkit-transform: rotate(-3deg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #ffffff;
+    border-bottom: 70px solid #fff;
+    box-shadow: 0px 0px  1px 3px #777;
+    width: 40%;
+    z-index: 1
+}
+
+#error{
+    margin-top: -450px;
+    display: table;
+}
+
+#errorpage{
+    text-align: center;
+    margin-top: $navheight+40px;
+    color: $darkcolor;
+}

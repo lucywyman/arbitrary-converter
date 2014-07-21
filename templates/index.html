@@ -1,34 +1,38 @@
 {% extends "base.html" %}
 
 {% block body %}
-
+<div id="layer1" class="content">
+{% if error %}
+    <p id="error">Oops! You seem to have entered something wrong!  We can only convert bases between -36 and 36 at the moment.  Keep in mind that there is no way to represent base 0 or base -1!  Please try again.</p>
+{% endif %}
+<form action="/convert" method=post type="text" name="acform" id="acform" autocomplete="off">
 {% block convert %}
 {% endblock %}
-
-{% if error %}
-<h2>Oops!  You seems to have entered something wrong!  We can only convert bases between 2 and 36 at the moment.  Please try again!</h2>
-{% endif %}
-
-<form action="/convert" method=post type="text" name="acform" id="acform" autocomplete="off">
-    <div class="input">
-        <p>Base of original number:</p>
-        <input type=text name=base1 size=10 max=100 required=required class="box">
-    </div>
-    <div class="input">
-        <p>Base to be converted to:</p>
-        <input type=text name=base2 size=10 max=100 required=required class="box">
-    </div>
-    <div class="input"><p>Number to be converted:</p>
-        <input type=text name=number size=30 max=1000000 required=required class="box"><li>
-        <input id="submit" type=submit name=submitbutton value="Convert!">
-    </div>
+<div class="input">
+<p>Base of original number:  </p>
+<input type=text name=base1 size=10 max=100 required=required class="box">
+</div>
+<div class="input">
+<p>Base to be converted to:  </p>
+<input type=text name=base2 size=10 max=100 required=required class="box">
+</div>
+<div class="input"><p>Number to be converted:  </p>
+<input type=text name=number size=30 max=1000000 required=required class="box"><li>
+<input id="submit" type=submit name=submitbutton value="Convert!">
+</div>
 </form>
+</div>
+<div class="content" id="layer2">
 <h3>How to use:</h3>
 <p> Hello! Welcome to the Arbitrary Base Converter!  To use, please enter the base of the number you're trying to convert, the base you'd like to convert it to, and the number itself (in original base).  If you aren't sure what a base is, it can be thought of as the number that you count to before adding more placeholders to the number.  For example, we usually use base 10, which means we have 10 positive integers (0 through 9) that are only 1 digit long, then we add another to make it 1 and 0, or 10.  There's a much better <a href="http://simple.wikipedia.org/wiki/Base_(mathematics)">explanation here</a>.</p><br><br>
+</div>
+<div id="layer3" class="content">
 <h3>Some cool stuff you can do:</h3>
 <ul>
 <li><h4>Convert your name to a number of any base:</h4><p> Just set the original base as 36, the new base as whichever you'd like it to be (I recommend base 10), and type in your name.</p></li>
 <li><h4>Convert any number to a <a href="http://en.wikipedia.org/wiki/Negative_base">negative base</a>:</h4><p> Yes! You can convert a number to a negative base.  Go ahead and give it a go!  You can also represent a number in a complex or non-integer base, such as the <a href="http://en.wikipedia.org/wiki/Complex_base_systems">Quarter-imaginary base</a> or <a href="http://en.wikipedia.org/wiki/Golden_ratio_base">Golden ratio base</a>.  Unfortunately, I do not have the mathematical skill to include these in the Arbitrary Base Converter.  Submit a pull request!</p></li>
 <li><h4>Check out wikipedia's <a href="http://en.wikipedia.org/wiki/List_of_numeral_systems#Complex_bases">List of numeral systems</a>:</h4><p> Seriously. Stuffs pretty awesome.</p></li>
 </ul>
+</div>
+</div>
 {% endblock %}
