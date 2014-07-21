@@ -1,3 +1,4 @@
 *.pyc
 *.swp
 *.swo
+.sass-cache/
